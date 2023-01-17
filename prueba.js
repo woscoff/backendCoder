@@ -102,4 +102,5 @@ class Empleado{
 }
 const empleado1= new Empleado("Pedro", "Parker", 20, 1200);
 const empleado2= new Empleado("Pedro", "Parker", 20, 1200);
+empleado1.sueldo = 10// crea una nueva propiedad
 console.log(empleado1.consultarSueldo);
