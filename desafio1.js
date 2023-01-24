@@ -1,3 +1,6 @@
+const fs = require('fs')
+fs.writeFileSync('./ejemplo.txt', 'Hola')
+
 class producto{    
     constructor(title,description,price,thumbnail,code,stock){
         this.title = title;

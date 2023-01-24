@@ -77,9 +77,9 @@ if (user) {
 //}
 
 //ECMA 11
-const facturas = [20000[40000, 22000, 5000], 9000, [70000, 30000]]
+/* const facturas = [20000[40000, 22000, 5000], 9000, [70000, 30000]] */
 //console.log(5+undefined);//=>NaN(not a number)// 5+null=5
-
+/* 
 console.log(facturas.flat(3).map(factura=>(factura = factura ?? 0).reduce((a,b)=>a+b,0))) // operador nullish si factura es undefined evuelvo 0
 
 class Empleado{
@@ -104,3 +104,42 @@ const empleado1= new Empleado("Pedro", "Parker", 20, 1200);
 const empleado2= new Empleado("Pedro", "Parker", 20, 1200);
 empleado1.sueldo = 10// crea una nueva propiedad
 console.log(empleado1.consultarSueldo);
+ */
+
+/* class Persona{
+    constructor(nombre, apellido){
+        this.nombre = nombre
+        this.apellido = apellido
+        this.id = addId()
+    }
+    static addId(){
+        if (this.idIncrement) {
+            this.idIncrement++;
+        } else {
+            this.idIncrement = 1;
+        }
+        return this.idIncrement
+    }
+} */
+
+/* const fs = require('fs')
+fs.writeFileSync('./ejemplo.txt', 'Hola')
+if(fs.existsSync('./ejemplo.txt')){
+    let contenido = fs.readFileSync('./ejemplo.txt', 'utf-8')
+    console.log(contenido);
+    fs.appendFileSync('./ejemplo.txt', `
+buenas noches`)
+    contenido = fs.readFileSync('./ejemplo.txt', 'utf-8')
+    console.log(contenido);
+    fs.unlinkSync('./ejemplo.txt')
+} */
+
+//asincronico con promesas
+const fs= require('fs')
+//import {promises as fs} from 'fs'
+
+
+const consultasTXT = async(ruta)=>{
+    await fs.promises.writeFile(ruta, "hola")
+}
+consultasTXT('./ejemplo.txt')
