@@ -134,12 +134,40 @@ buenas noches`)
     fs.unlinkSync('./ejemplo.txt')
 } */
 
+
+
 //asincronico con promesas
-const fs= require('fs')
+
+/* const fs= require('fs')
 //import {promises as fs} from 'fs'
 
 
 const consultasTXT = async(ruta)=>{
     await fs.promises.writeFile(ruta, "hola")
 }
-consultasTXT('./ejemplo.txt')
+consultasTXT('./ejemplo.txt') */
+
+
+/* 
+Proceso de encriptacion:
+Algoritmo de encriptacion
+key o clave
+iv o vector inicial
+
+ */
+const crypto = require('crypto');
+
+/* console.log(crypto.getCiphers()); *///consulta tipos de algoritmos de encriptacion
+
+const algoritmo = 'aes-256-cbc'
+const key = crypto.randomBytes(32)
+const iv = crypto.randomBytes(16)
+
+const encriptar = (password) =>{
+    const cipher = crypto.createCipheriv(algoritmo, Buffer.from(key), iv)//la key debe seguirse manejando como un buffer 
+    cipher.update(password)//preparar el objeto para encriptar
+    let encriptacion = cipher.final()//resultado de la encriptacion
+    console.log(encriptacion .toString('hex'));
+}
+const password = "coderhouse"
+encriptar(password);
