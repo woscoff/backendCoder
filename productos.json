@@ -1,5 +1,1 @@
-[
-    {"title":"aa","description":"si","price":1000,"thumbnail":"img","code":3,"id":1,"stock":12},
-    {"title":"bb","description":"no","price":900,"thumbnail":"imagen","code":1,"id":2,"stock":9},
-    {"title":"cc","description":"capaz","price":500,"thumbnail":"image","code":5,"id":3,"stock":29}
-]
+[{"title":"actualizado","description":"se","price":1500,"thumbnail":"megaImg","code":5,"id":1,"stock":34},{"title":"bb","description":"no","price":900,"thumbnail":"imagen","code":1,"id":2,"stock":9},{"title":"cc","description":"capaz","price":500,"thumbnail":"img","code":5,"id":3,"stock":29},{"title":"zzz","description":"tal vez","price":500,"thumbnail":"IMG","code":12,"id":4,"stock":80}]
