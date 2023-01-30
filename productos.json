@@ -1,0 +1,5 @@
+[
+    {"title":"aa","description":"si","price":1000,"thumbnail":"img","code":3,"id":1,"stock":12},
+    {"title":"bb","description":"no","price":900,"thumbnail":"imagen","code":1,"id":2,"stock":9},
+    {"title":"cc","description":"capaz","price":500,"thumbnail":"image","code":5,"id":3,"stock":29}
+]
