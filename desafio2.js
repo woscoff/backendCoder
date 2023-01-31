@@ -102,7 +102,7 @@ class Product {
 
 const prod1 = new ProductManager("./productos.json");
 
-prod1.addProduct("zzz", "tal vez", 500, "IMG", 80, 12)
+prod1.addProduct("zzz", "tal vez", 500, "IMG", 80, 12)  
 
 prod1.updateProduct(1,"actualizado","se",1500,"megaImg",34,5)
 console.log(prod1.getProducts());
