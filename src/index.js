@@ -34,6 +34,7 @@ const users =[{
 ]
 
 app.use(express.urlencoded({extended:true}))
+app.use(express.json())
 
 app.get('/', (req, res) =>{
     res.send("este es mi primer servidor con express")
@@ -48,15 +49,32 @@ app.get('/user', (req, res)=>{
     //const copiaProductos = arrayProductos.slice(0, limite)
 })
 
-app.get('/user/:idUser', (req, res) =>{
+app.delete('/user/:idUser', (req, res) =>{
     const idUser = req.params.idUser
-    const user = users.find(user => user.id === parseInt(idUser))
-    if (user) {
-        res.send(`nombre de usuario ${user.nombre}`)
+    const index = users.findIndex(user => user.id === parseInt(idUser))
+    if (index != -1) {
+        users.splice(index, 1)
+        res.send(`usuario eliminado`)
     }else{
         res.send(`el usuario no existe`)
     }
 })
+
+app.put('/user/:id', (req, res)=>{
+    let id= parseInt(req.params.id)
+    let nombre, apellido, cargo =req.body;
+    if (users.some(user=>user.id=== id)) {
+        const indice = users.findIndex(usuario => usuario.id === id)
+        users[indice].cargo = cargo
+        users[indice].apellido = apellido
+        users[indice].nombre = nombre
+        users.push({nombre: nombre, apellido: apellido, cargo: cargo, id: indice})
+        res.send("Usuario actualizado");
+    }res.send("Usuario no encontrado");
+
+})
+
+
 app.listen(PORT, () =>{
     console.log(`server on port ${PORT}`);
 })
