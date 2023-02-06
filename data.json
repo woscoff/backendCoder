@@ -1,0 +1,38 @@
+[
+  {
+    "title": "actualizado",
+    "description": "se",
+    "price": 1500,
+    "thumbnail": "megaImg",
+    "code": 5,
+    "id": 1,
+    "stock": 34
+  },
+  {
+    "title": "bb",
+    "description": "no",
+    "price": 900,
+    "thumbnail": "imagen",
+    "code": 1,
+    "id": 2,
+    "stock": 9
+  },
+  {
+    "title": "cc",
+    "description": "capaz",
+    "price": 500,
+    "thumbnail": "img",
+    "code": 6,
+    "id": 3,
+    "stock": 29
+  },
+  {
+    "title": "zzz",
+    "description": "tal vez",
+    "price": 500,
+    "thumbnail": "IMG",
+    "code": 12,
+    "id": 4,
+    "stock": 80
+  }
+]
