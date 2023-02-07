@@ -2,7 +2,7 @@ import express from "express";
 
 import ProductManager from "../desafio2.js";
 
-const manager = new ProductManager("../productos.json");
+const manager = new ProductManager("../data.json");
 
 const app = express();
 

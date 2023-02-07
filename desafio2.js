@@ -23,7 +23,7 @@ class ProductManager {
         data.push(newObject);
         await fs.writeFile(this.path, JSON.stringify(data, null, 2), "utf-8");
         return console.log(
-          `Agregaste el producto con id: ${newObject.id} exitosamente`
+          `El producto con id: ${newObject.id} fue agregado`
         );
       }
     } catch (error) {
