@@ -8,6 +8,8 @@ import multer from 'multer'
 import { engine } from 'express-handlebars';
 import * as path from 'path'
 import { Server } from "socket.io";
+import mongoose from "mongoose";
+import routerUser from "./routes/users.routes.js";
 
 const productManager = new ProductManager('src/models/products.json');
 const app = express();
@@ -29,8 +31,13 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.resolve(__dirname, './views')); //__dirname + './views'
 
+
+mongoose.connect("mongodb+srv://santiwoscoff:coderhouse@cluster0.mmq3z3f.mongodb.net/?retryWrites=true&w=majority")
+.then(()=> console.log("DB conectada"))
+.catch(error => console.log("Error en Conexion MongoDBAtlas: ", error))
 //ServerIO
 const io = new Server(server)
+//mongodb+srv://santiwoscoff:coderhouse@cluster0.mmq3z3f.mongodb.net/?retryWrites=true&w=majority
 io.on("connection", async (socket) => {
     console.log("cliente conectado")
 
@@ -53,6 +60,7 @@ app.use('/api/products', routerProduct)
 app.use("/", routerSocket)
 app.use('/realtimeproducts', routerSocket)
 app.use('/api/carts', routerCart)
+app.use('/users', routerUser)
 
 
 
